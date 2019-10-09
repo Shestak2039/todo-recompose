@@ -5,3 +5,9 @@ export function showModalAction() {
         type: types.SHOW_MODAL
     }
 }
+
+export function hideModalAction() {
+    return {
+        type: types.HIDE_MODAL
+    }
+}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Modal from './Modal';
 
-import { addTodoAction, deleteTodoAction } from './actions/todo-actions';
+import { addTodoAction, deleteTodoAction } from '../../actions/todo-actions';
 
 const mapStateToProps = ({todoState: { todos }}) => ({ todos })
 

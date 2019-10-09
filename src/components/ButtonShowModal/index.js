@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { showModalAction } from './actions/modal-actions';
+import { showModalAction } from '../../actions/modal-actions';
 
 import ButtonShowModal from './ButtonShowModal';
 

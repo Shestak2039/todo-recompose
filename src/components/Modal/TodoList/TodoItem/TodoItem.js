@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TodoItem = ({ todo, deleteTodoItem }) => {
+const TodoItem = ({ todo: {message}, deleteTodoItem }) => {
     return  (
     <Todo>
-        <Text>{todo.message}</Text>
+        <Text>{message}</Text>
         <DeleteButton onClick={deleteTodoItem}>Delete</DeleteButton>
     </Todo>
 )}

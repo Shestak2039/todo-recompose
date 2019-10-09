@@ -3,8 +3,8 @@ import React from 'react';
 import ButtonShowModal from '../ButtonShowModal';
 import Modal from '../Modal';
 
-const Root = (props) => (
-    !props.modal
+const Root = ({ modal }) => (
+    !modal
         ? <ButtonShowModal />
         : <Modal />
 );

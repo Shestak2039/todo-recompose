@@ -2,10 +2,6 @@ import React from 'react';
 
 import Root from './components/Root';
 
-function App() {
-  return (
-    <Root />
-  );
-}
+const App = () => <Root />
 
 export default App;

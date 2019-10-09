@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonHideModal = (props) => (
-    <Button onClick={props.hideModal}>Hide Modal</Button>
+const ButtonHideModal = ({ hideModal }) => (
+    <Button onClick={hideModal}>Hide Modal</Button>
 ); 
 
 const Button = styled.button`

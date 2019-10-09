@@ -4,7 +4,7 @@ import TodoItem from './TodoItem';
 
 export default compose(
     withHandlers({
-        deleteTodoItem: ({todo, deleteTodo}) => () => {
+        deleteTodoItem: ({ todo, deleteTodo }) => () => {
             deleteTodo(todo);
         }
     }),

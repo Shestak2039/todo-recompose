@@ -1,6 +1,15 @@
+import { handleActions } from 'redux-actions';
+
 import * as types from '../actions/action-types';
 
-const initialState = {
+const todoReducer = handleActions({
+    [types.ADD_TODO]: (state, action) => ({
+        ...state, todos: state.todos.concat(action.payload),
+    }),
+    [types.DELETE_TODO]: (state, action) => ({
+        ...state, todos: state.todos.filter((item) => item.id !== action.payload.id),
+    }),
+},{
     todos: [
         {
             id: 1,
@@ -15,17 +24,6 @@ const initialState = {
             message: 'Something else',
         }
     ],
-}
-
-const todoReducer = function(state = initialState, action) {
-    switch(action.type) {
-        case types.ADD_TODO:
-            return {...state, todos: state.todos.concat(action.todo)};
-        case types.DELETE_TODO:
-            return {...state, todos: state.todos.filter((item) => item.id !== action.todo.id)};
-        default:
-            return state;
-    }
-}
+});
 
 export default todoReducer;

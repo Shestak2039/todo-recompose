@@ -1,18 +1,14 @@
+import { handleActions } from 'redux-actions';
+
 import * as types from '../actions/action-types';
 
-const initialState = {
-    modal: false,
-}
-
-const modalReducer = function(state = initialState, action) {
-    switch(action.type) {
-        case types.SHOW_MODAL:
-            return {...state, modal: true};
-        case types.HIDE_MODAL:
-            return {...state, modal: false};
-        default:
-            return state;
-    }
-}
+const modalReducer = handleActions({
+    [types.SHOW_MODAL]: (state) => ({
+        ...state, modal: true,
+    }),
+    [types.HIDE_MODAL]: (state) => ({
+        ...state, modal: false,
+    }),
+}, { modal: false });
 
 export default modalReducer;

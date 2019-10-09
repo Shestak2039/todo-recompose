@@ -1,13 +1,5 @@
+import { createAction } from 'redux-actions';
 import * as types from './action-types';
 
-export function showModalAction() {
-    return {
-        type: types.SHOW_MODAL
-    }
-}
-
-export function hideModalAction() {
-    return {
-        type: types.HIDE_MODAL
-    }
-}
+export const showModalAction = createAction(types.SHOW_MODAL);
+export const hideModalAction = createAction(types.HIDE_MODAL);

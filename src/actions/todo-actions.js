@@ -1,15 +1,8 @@
+import { createAction } from 'redux-actions';
 import * as types from './action-types';
 
-export function addTodoAction(todo) {
-    return {
-        type: types.ADD_TODO,
-        todo
-    };
-}
+const addTodoAction = createAction(types.ADD_TODO, todo => todo);
 
-export function deleteTodoAction(todo) {
-    return {
-        type: types.DELETE_TODO,
-        todo
-    }
-}
+const deleteTodoAction = createAction(types.DELETE_TODO, todo => todo);
+
+export { addTodoAction, deleteTodoAction };

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonHideModal = ({ hideModal }) => (
-    <Button onClick={hideModal}>Hide Modal</Button>
+const ButtonHideModal = ({ handleHide }) => (
+    <Button onClick={handleHide}>Hide Modal</Button>
 ); 
 
 const Button = styled.button`
@@ -13,6 +13,7 @@ const Button = styled.button`
     color: black;
     box-shadow: 0px 0px 5px black; 
     cursor: pointer;
+    margin: 15px 10px 0 0;
 
     &:hover {
         box-shadow: 0;

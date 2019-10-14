@@ -1,21 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Toolbar = ({ addTodoItem }) => (
-    <main>
-        <Label htmlFor="add-todo">{'Add Todo:'}</Label>
-        <Input id="add-todo" onKeyDown={addTodoItem}/>
-    </main>
-);
+import { Field, reduxForm } from 'redux-form';
 
-const Input = styled.input`
-    width: 170px;
-    height: 30px;
-    margin-top: 15px;
-`
+const Toolbar = ({ addTodoItem, handleSubmit }) => (
+    <div>
+        <form onSubmit={handleSubmit}>
+            <Label htmlFor="todoName">{'Add Todo:'}</Label>
+            <Field 
+                name="todoName"
+                component="input"
+                type="text"
+                onKeyDown={addTodoItem}
+            />
+        </form>
+    </div>
+);
 
 const Label = styled.label`
 
 `
 
-export default Toolbar;
+export default reduxForm({
+    form: 'todo'
+})(Toolbar);

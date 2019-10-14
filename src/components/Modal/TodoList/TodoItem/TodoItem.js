@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TodoItem = ({ todo: {message}, deleteTodoItem }) => {
     return  (
-    <Todo>
+    <Todo role="listitem">
         <Text>{message}</Text>
         <DeleteButton onClick={deleteTodoItem}>Delete</DeleteButton>
     </Todo>

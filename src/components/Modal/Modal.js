@@ -5,12 +5,12 @@ import ButtonHideModal from './ButtonHideModal';
 import TodoList from './TodoList/TodoList';
 import Toolbar from './Toolbar';
 
-const Modal = ({ todos, addTodo, deleteTodo, maxId }) => (
-    <BackgroundModal>
-        <ModalWindow>
+const Modal = ({ todos, addTodo, deleteTodo, maxId, show }) => (
+    <BackgroundModal show={show}>
+        <ModalWindow role="dialog" aria-modal="true">
+            <Toolbar addTodo={addTodo} maxId={maxId} /> 
+            <TodoList todos={todos} deleteTodo={deleteTodo} /> 
             <ButtonHideModal />
-            <Toolbar addTodo={addTodo} maxId={maxId}/>
-            <TodoList todos={todos} deleteTodo={deleteTodo} />
         </ModalWindow>
     </BackgroundModal>
 );
@@ -20,7 +20,9 @@ const BackgroundModal = styled.div`
     height: 100vh;
     padding-top: 50px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(255, 255, 255, .5);
+    position: absolute;
+    top: 0px;
 `
 
 const ModalWindow = styled.div`
@@ -29,9 +31,9 @@ const ModalWindow = styled.div`
     margin: 0 auto;
     background-color: white;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
-    padding-left: 50px;
+    padding-left: 10px;
 `
 
 export default Modal;

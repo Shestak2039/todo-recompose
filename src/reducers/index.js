@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 
+import { reducer as formReducer } from 'redux-form';
+import { reducer as modal } from 'redux-modal';
+
 import todoReducer from './todo-reducer';
-import modalReducer from './modal-reducer';
 
 const reducers = combineReducers({
     todoState: todoReducer,
-    modalState: modalReducer,
+    form: formReducer,
+    modal
 });
 
 export default reducers;

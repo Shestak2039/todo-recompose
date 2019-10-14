@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonShowModal = (props) => (
-    <Button onClick={props.showModal}>Show Modal</Button>
+const ButtonShowModal = ({ handleOpen }) => (
+    <Button onClick={handleOpen}>Show Modal</Button>
 ); 
 
 const Button = styled.button`

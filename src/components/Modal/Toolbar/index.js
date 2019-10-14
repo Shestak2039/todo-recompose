@@ -9,6 +9,9 @@ export default compose(
                 addTodo({id: maxId + 1, message: event.target.value});
                 event.target.value = ''
             }
+        },
+        handleSubmit: () => (event) => {
+            event.preventDefault();
         }
     }),
 )(Toolbar);
